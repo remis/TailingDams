@@ -1,0 +1,1 @@
+python retrain_tensorflow_tutorial.py --image_dir ../../../DataForTailingDamDetection/Data/Preprocessed_images/
