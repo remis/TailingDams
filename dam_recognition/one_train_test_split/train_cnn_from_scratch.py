@@ -15,6 +15,8 @@ experiment_name = 'from_scratch_one_train_test_split'
 
 path_to_data = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'
 path_to_results = path_upwards + config.result_path + config.experiment_data + experiment_name + '/'
+if not os.path.exists(path_to_results):
+    os.makedirs(path_to_results)
 
 data = np.load(path_to_data + 'train_test_data.npz')
 
