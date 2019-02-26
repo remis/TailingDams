@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
 import config
+from utils.ml_functions import compute_confusion_matrix
 from utils.utils_input_output import read_label_dictionary
 from utils.utils_plots import plot_confusion_matrix_with_confidence
 
@@ -33,9 +34,9 @@ for run in range(n_runs):
     all_train_accuracy[run] = cur_results['train_accuracy']
     all_test_accuracy[run] = cur_results['test_accuracy']
 
-    all_test_cm[run] = confusion_matrix(np.argmax(cur_data['test_labels'], axis=1),
-                                        np.argmax(cur_results['test_prediction'], axis=1))
-    all_test_cm[run] = all_test_cm[run] / all_test_cm[run].sum(axis=1)[:, np.newaxis]
+    all_test_cm[run] = compute_confusion_matrix(np.argmax(cur_data['test_labels'], axis=1),
+                                                np.argmax(cur_results['test_prediction'], axis=1),
+                                                normalise=True)
 
 
 mean_train_accuracy = np.mean(all_train_accuracy, axis=0)
