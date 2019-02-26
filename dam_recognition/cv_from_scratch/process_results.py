@@ -33,7 +33,8 @@ for run in range(n_runs):
     all_train_accuracy[run] = cur_results['train_accuracy']
     all_test_accuracy[run] = cur_results['test_accuracy']
 
-    all_test_cm[run] = confusion_matrix(cur_data['test_labels'], cur_results['test_prediction'])
+    all_test_cm[run] = confusion_matrix(np.argmax(cur_data['test_labels'], axis=1),
+                                        np.argmax(cur_results['test_prediction'], axis=1))
     all_test_cm[run] = all_test_cm[run] / all_test_cm[run].sum(axis=1)[:, np.newaxis]
 
 
