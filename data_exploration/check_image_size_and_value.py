@@ -4,7 +4,7 @@ import config
 import os
 
 path_upwards = '../'
-path_to_images = path_upwards + config.data_path + config.image_path
+path_to_images = path_upwards + config.data_path + config.train_image_path
 
 n_bands = 3
 

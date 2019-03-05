@@ -5,7 +5,7 @@ import os
 from PIL import Image
 
 path_upwards = '../../'
-path_to_images = path_upwards + config.data_path + config.image_path
+path_to_images = path_upwards + config.data_path + config.train_image_path
 path_to_output_images = path_upwards + config.data_path + config.preprocessed_image_path
 
 image_value_min = 0

@@ -13,7 +13,7 @@ np.random.seed(rseed)
 path_upwards = '../../'
 experiment_name = 'from_scratch_one_train_test_split'
 
-path_to_images = path_upwards + config.data_path + config.image_path
+path_to_images = path_upwards + config.data_path + config.train_image_path
 path_to_output = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'
 
 if not os.path.exists(path_to_output):

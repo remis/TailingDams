@@ -13,7 +13,7 @@ np.random.seed(rseed)
 path_upwards = '../../'
 experiment_name = 'two_classes_cv_10_folds'
 
-path_to_images = path_upwards + config.data_path + config.image_path
+path_to_images = path_upwards + config.data_path + config.train_image_path
 path_to_output = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'
 
 if not os.path.exists(path_to_output):
@@ -77,7 +77,7 @@ for cv_run in range(n_cv_runs):
     train_images = images[:-n_test]
     train_labels = labels[:-n_test]
 
-    # nomalisation
+    # normalisation
     image_mean = np.mean(train_images, axis=0)
     image_std = np.std(train_images, axis=0)
 
