@@ -4,7 +4,8 @@ import config
 import os
 
 path_upwards = '../'
-path_to_images = path_upwards + config.data_path + config.initial_image_path
+path_to_dam_images = path_upwards + config.data_path + config.train_dam_image_v3
+path_to_no_dam_images = path_upwards + config.data_path + config.train_no_dam_image_v2
 
 n_bands = 3
 
@@ -24,10 +25,10 @@ image_height_mean = 0
 
 image_counter = 1
 
-for subdir in next(os.walk(path_to_images))[1]:
-
-    for file in os.listdir(path_to_images + subdir):
-        img_array = np.transpose(np.array(gdal.Open(path_to_images + subdir + '/' + file).ReadAsArray()),
+for image_dir in [path_to_dam_images, path_to_no_dam_images]:
+    print(image_dir)
+    for file in os.listdir(image_dir):
+        img_array = np.transpose(np.array(gdal.Open(image_dir + file).ReadAsArray()),
                                  axes=(1, 2, 0))
         cur_height, cur_width, _ = img_array.shape
 
@@ -84,7 +85,7 @@ for band in range(n_bands):
     print('mean: {}'.format(image_value_band_mean[band]))
 
 
-# min width 236, min height 236, number of images 890
+# min width 134, min height 134, number of images 800-dams, 402-no dams
 
 
 

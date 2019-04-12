@@ -1,7 +1,10 @@
 data_path = '../DataForTailingDamDetection/Data/'
 result_path = '../DataForTailingDamDetection/Results/'
 train_image_path = 'Train_images/'
-train_updated_dam_image_path = 'damsImagesv2/'
+initial_image_path = 'initial_images/'
+train_dam_image_v2 = 'damsImagesv2_smaller_areas_bigger_dams/'
+train_dam_image_v3 = 'damsImagesv3_removed_urban_areas/'
+train_no_dam_image_v2 = 'nodamsv2_smaller_areas_addressed_false_positives/'
 test_image_path = 'Big_area_images/'
 preprocessed_image_path = 'Preprocessed_images/'
 

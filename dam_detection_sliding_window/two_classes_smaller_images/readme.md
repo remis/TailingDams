@@ -1,4 +1,4 @@
-Applying the neural net trained from scratch in dam_recognition.two_classes_cv_from_scratch in a sliding window manner to an image of a bigger area for dam detection
+Applying the neural net trained from scratch in dam_recognition.two_classes_cv_smaller_images in a sliding window manner to an image of a bigger area for dam detection
 
 Architecture is LeNet5-style
 
