@@ -2,7 +2,6 @@ from tempfile import NamedTemporaryFile
 
 import numpy as np
 import gdal
-import logging
 
 import matplotlib.pyplot as plt
 
@@ -20,21 +19,12 @@ class GdalIO():
         dataset = gdal.Open(path, gdal.GA_ReadOnly)
 
         # Getting Dataset Information
-        logging.info("Driver: {}/{}".format(dataset.GetDriver().ShortName,
-            dataset.GetDriver().LongName))
         self.gdal_options['driver'] = dataset.GetDriver()
 
-        logging.info("Size is {} x {} x {}".format(dataset.RasterXSize,
-                                            dataset.RasterYSize,
-                                            dataset.RasterCount))
         self.gdal_options['size'] = [dataset.RasterXSize, dataset.RasterYSize,  dataset.RasterCount]
 
-        logging.info("Projection is {}".format(dataset.GetProjection()))
         self.gdal_options['projection'] = dataset.GetProjection()
         geotransform = dataset.GetGeoTransform()
-        if geotransform:
-            logging.info("Origin = ({}, {})".format(geotransform[0], geotransform[3]))
-            logging.info("Pixel Size = ({}, {})".format(geotransform[1], geotransform[5]))
         self.gdal_options['geotransform'] = geotransform
 
         dataset = None

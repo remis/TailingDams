@@ -4,6 +4,9 @@ import numpy as np
 import tensorflow as tf
 from tqdm import tqdm
 
+import sys
+sys.path.extend(['../../TailingDamDetection/'])
+
 from dam_detection_sliding_window.postprocessor import PostProcessor
 from utils.ml_functions import softmax
 

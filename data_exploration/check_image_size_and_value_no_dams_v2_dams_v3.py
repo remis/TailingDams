@@ -1,9 +1,13 @@
 import gdal
 import numpy as np
-import config
 import os
 
 path_upwards = '../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+import config
+
+
 path_to_dam_images = path_upwards + config.data_path + config.train_dam_image_v3
 path_to_no_dam_images = path_upwards + config.data_path + config.train_no_dam_image_v2
 

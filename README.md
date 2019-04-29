@@ -1,9 +1,22 @@
 # TailingDamDetection
 
+## Code dependencies
+```bash
+pip install tensorflow
+pip install matplotlib
+pip install gdal
+pip install Pillow
+pip install scipy
+pip install -U scikit-learn
+pip install tqdm
+```
+
 ## To do
 1. Check false positive on the data the neural net used, especially for areas where for similar subareas there are no detections. E.g. 16 12' 48.86''S 47 31' 31.82''W
 
 ## Data changes
+Images have 3 bands: shortwave Infrared, near infrared and red spectral.
+
 * 13 February 2019 - initial data. 
 - Three categories: dams (539 files), no dams (300 files), look-a-likes (51 files). These numbers based on saved numpy arrays. Currently in the folder the number of dams is different - 531. 
 - Area approximately 50km^2, or 236x236 pixels (minimum values)

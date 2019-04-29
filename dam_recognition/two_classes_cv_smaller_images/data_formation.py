@@ -1,17 +1,20 @@
 import numpy as np
 import gdal
 from PIL import Image
-import config
 import os
 from tempfile import NamedTemporaryFile
 
+path_upwards = '../../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+
+import config
 from utils.utils_bb import crop_array
 from utils.utils_dataset_processing import shuffle_arrays, convert_label_to_one_hot
 
 rseed = 100
 np.random.seed(rseed)
 
-path_upwards = '../../'
 experiment_name = 'two_classes_cv_smaller_images'
 
 path_to_original_images = path_upwards + config.data_path + config.initial_image_path

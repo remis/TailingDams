@@ -2,10 +2,14 @@ import numpy as np
 import tensorflow as tf
 from tqdm import tqdm
 
-import config
 import os
 import matplotlib.pyplot as plt
 
+path_upwards = '../../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+
+import config
 from nn_architecture.aka_lenet import cnn_adjust_lr
 from utils.ml_functions import softmax
 
@@ -13,7 +17,6 @@ rseed = 1000
 np.random.seed(rseed)
 tf.random.set_random_seed(rseed)
 
-path_upwards = '../../'
 experiment_name = 'two_classes_images_v3'
 
 path_to_data = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'

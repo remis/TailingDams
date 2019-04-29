@@ -5,12 +5,16 @@ import matplotlib.pyplot as plt
 from scipy import interp
 from sklearn.metrics import roc_curve, auc
 
+path_upwards = '../../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+
 import config
 from utils.ml_functions import compute_confusion_matrix
 from utils.utils_input_output import read_label_dictionary
 from utils.utils_plots import plot_confusion_matrix_with_confidence
 
-path_upwards = '../../'
+
 experiment_name = 'two_classes_cv_10_folds'
 
 path_to_data = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'

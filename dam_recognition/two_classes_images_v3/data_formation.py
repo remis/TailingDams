@@ -1,10 +1,15 @@
 import numpy as np
 import gdal
 from PIL import Image
-import config
+
 import os
 from tempfile import NamedTemporaryFile
 
+path_upwards = '../../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+
+import config
 from utils.np_data_augmentation import random_flip, random_rotation
 from utils.utils_bb import crop_array, crop_corner
 from utils.utils_dataset_processing import shuffle_arrays, convert_label_to_one_hot
@@ -12,7 +17,6 @@ from utils.utils_dataset_processing import shuffle_arrays, convert_label_to_one_
 rseed = 100
 np.random.seed(rseed)
 
-path_upwards = '../../'
 experiment_name = 'two_classes_images_v3'
 
 path_to_original_images = path_upwards + config.data_path + config.initial_image_path

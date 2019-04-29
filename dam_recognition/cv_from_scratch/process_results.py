@@ -4,12 +4,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
+path_upwards = '../../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+
 import config
 from utils.ml_functions import compute_confusion_matrix
 from utils.utils_input_output import read_label_dictionary
 from utils.utils_plots import plot_confusion_matrix_with_confidence
 
-path_upwards = '../../'
 experiment_name = 'cv_10_folds'
 
 path_to_data = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'

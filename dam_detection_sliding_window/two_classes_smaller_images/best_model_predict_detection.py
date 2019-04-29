@@ -2,15 +2,20 @@ import os
 
 import h5py
 
-import config
 import numpy as np
 import gdal
+
+path_upwards = '../../'
+import sys
+sys.path.extend([path_upwards + '../TailingDamDetection/'])
+
+import config
 
 from dam_detection_sliding_window.predict_on_sliding_window import wrap_predictions, apply_for_sliding_window
 from data_io.gdal_io import GdalIO
 from nn_architecture.aka_lenet import cnn_adjust_lr
 
-path_upwards = '../../'
+
 experiment_name = 'two_classes_cv_smaller_images'
 
 path_to_train_data = path_upwards + config.data_path + config.experiment_data + experiment_name + '/'
