@@ -6,3 +6,4 @@ First choosing the best performed neural network among nets trained on 10 splits
 
 2-class classification problem: dams, not dams = {not dams, lookalike}
 
+.
